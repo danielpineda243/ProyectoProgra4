@@ -1,2 +1,1 @@
-#ProyectoProgra4 Hola
-Nega
+#ProyectoProgra4 Hola   dos
