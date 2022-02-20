@@ -4,6 +4,8 @@
  */
 package proyectoprogra4;
 
+import conector.conexion;
+
 /**
  *
  * @author LA CHAPARRITA PINEDA
@@ -14,7 +16,8 @@ public class ProyectoProgra4 {
 	 * @param args the command line arguments
 	 */
 	public static void main(String[] args) {
-		// TODO code application logic here
+		conexion con = new conexion();
+		con.getConexion();
 	}
-	
+
 }
