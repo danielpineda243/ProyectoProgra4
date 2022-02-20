@@ -12,7 +12,7 @@ public class conexion {
 	public Connection getConexion() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			con = DriverManager.getConnection(this.url, "root", "Marcapasos1.");
+			con = DriverManager.getConnection(this.url, "root", "");
 			if (con != null) {
 				System.out.println("conexion Establecida");
 			}

@@ -3,26 +3,26 @@ package proyectoprogra4;
 
 
 public class cartelera {
-    private String Peliculas;
-    private String Horarios;
+    private String Pelicula;
+    private String Horario;
     private String TipoSala;
     private String Idioma;
 
     
-    public String getPeliculas() {
-        return Peliculas;
+    public String getPelicula() {
+        return Pelicula;
     }
 
-    public void setPeliculas(String Peliculas) {
-        this.Peliculas = Peliculas;
+    public void setPelicula(String Pelicula) {
+        this.Pelicula = Pelicula;
     }
 
-    public String getHorarios() {
-        return Horarios;
+    public String getHorario() {
+        return Horario;
     }
 
-    public void setHorarios(String Horarios) {
-        this.Horarios = Horarios;
+    public void setHorario(String Horario) {
+        this.Horario = Horario;
     }
 
     public String getTipoSala() {

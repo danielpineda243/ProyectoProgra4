@@ -131,6 +131,11 @@ public class Formcartelera extends javax.swing.JFrame {
         btnagregar.setText("Agregar");
 
         btneditar.setText("Editar");
+        btneditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btneditarActionPerformed(evt);
+            }
+        });
 
         btneliminar.setText("Eliminar");
 
@@ -180,6 +185,10 @@ public class Formcartelera extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbTipoSalaActionPerformed
 
+    private void btneditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btneditarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -216,12 +225,12 @@ public class Formcartelera extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnagregar;
-    private javax.swing.JButton btnbuscar;
-    private javax.swing.JButton btneditar;
-    private javax.swing.JButton btneliminar;
-    private javax.swing.JComboBox<String> cmbIdioma;
-    private javax.swing.JComboBox<String> cmbTipoSala;
+    public javax.swing.JButton btnagregar;
+    public javax.swing.JButton btnbuscar;
+    public javax.swing.JButton btneditar;
+    public javax.swing.JButton btneliminar;
+    public javax.swing.JComboBox<String> cmbIdioma;
+    public javax.swing.JComboBox<String> cmbTipoSala;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -229,7 +238,7 @@ public class Formcartelera extends javax.swing.JFrame {
     private javax.swing.JLabel lblIdioma;
     private javax.swing.JLabel lblPelicula;
     private javax.swing.JLabel lblTiposala;
-    private javax.swing.JTextField txtHorarios;
-    private javax.swing.JTextField txtpelicula;
+    public javax.swing.JTextField txtHorarios;
+    public javax.swing.JTextField txtpelicula;
     // End of variables declaration//GEN-END:variables
 }
