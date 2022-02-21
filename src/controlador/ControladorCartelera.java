@@ -40,10 +40,10 @@ public class ControladorCartelera implements ActionListener {
 	}
     
     @Override
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent e) 
+        {
 		if (e.getSource() == formcar.btnagregar) {
-}                     
-			car.setPelicula(formcar.txtpelicula.getText());
+                    car.setPelicula(formcar.txtpelicula.getText());
 			car.setHorario(formcar.txtHorarios.getText());
 			//*car.setTipoSala(formcar.cmbTipoSala.getText());
                         //car.setIdioma(formcar.cmbIdioma);
@@ -55,10 +55,42 @@ public class ControladorCartelera implements ActionListener {
 			} else {
 				JOptionPane.showMessageDialog(null, "error ");
 			}
-		
-
+} 
+                if (e.getSource() == formcar.btneditar) {
+                    car.setPelicula(formcar.txtpelicula.getText());
+			car.setHorario(formcar.txtHorarios.getText());
+			//*car.setTipoSala(formcar.cmbTipoSala.getText());
+                        //car.setIdioma(formcar.cmbIdioma);
+                        
+                          
+		if (consultacar.editar(car)) {
+				JOptionPane.showMessageDialog(null, "Se ha editado la pelicula");
+				limpiar();
+			} else {
+				JOptionPane.showMessageDialog(null, "error ");
+			}
+                
 	}
+                if (e.getSource() == formcar.btneliminar) {
+                    car.setPelicula(formcar.txtpelicula.getText());
+			car.setHorario(formcar.txtHorarios.getText());
+			//*car.setTipoSala(formcar.cmbTipoSala.getText());
+                        //car.setIdioma(formcar.cmbIdioma);
+                        
+                          
+		if (consultacar.eliminar(car)) {
+				JOptionPane.showMessageDialog(null, "Se ha eliminado la pelicula");
+				limpiar();
+			} else {
+				JOptionPane.showMessageDialog(null, "error ");
+			}
+      
+        
+        
 
+}
+                
+}
 }
     
 
