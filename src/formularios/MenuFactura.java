@@ -2,14 +2,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package formulario;
+package formularios;
 
 import consulta.ConsultaCartelera;
+import consulta.ConsultaCliente;
 import consulta.consultafactura;
 import controlador.ControladorCartelera;
+import controlador.ControladorCliente;
 import controlador.controladorfactura;
 import formularios.Formcartelera;
 import proyectoprogra4.cartelera;
+import proyectoprogra4.cliente;
 import proyectoprogra4.facturar;
 
 /**
@@ -39,6 +42,7 @@ public class MenuFactura extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
+        mCliente = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
 
@@ -66,6 +70,14 @@ public class MenuFactura extends javax.swing.JFrame {
             }
         });
         jMenu2.add(jMenuItem2);
+
+        mCliente.setText("Cliente");
+        mCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mClienteActionPerformed(evt);
+            }
+        });
+        jMenu2.add(mCliente);
 
         jMenuItem1.setText("facturar");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -116,9 +128,18 @@ public class MenuFactura extends javax.swing.JFrame {
 		formcar.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
-	/**
-	 * @param args the command line arguments
-	 */
+    private void mClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mClienteActionPerformed
+        cliente nuevo_clie= new cliente ();
+        ConsultaCliente consulta_clie = new ConsultaCliente();
+        FormCliente frmclien = new FormCliente();
+        ControladorCliente ctrl=new ControladorCliente(nuevo_clie,frmclien,consulta_clie); 
+        //Para esta parte se ocupa llevar el orden de controlador
+        ctrl.Iniciar();
+        frmclien.setVisible(true);
+        //La instancia es el nombre que asigno yo, y no es la clase.
+    }//GEN-LAST:event_mClienteActionPerformed
+
+	
 	public static void main(String args[]) {
 		/* Set the Nimbus look and feel */
 		//<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -159,5 +180,6 @@ public class MenuFactura extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenuItem mCliente;
     // End of variables declaration//GEN-END:variables
 }

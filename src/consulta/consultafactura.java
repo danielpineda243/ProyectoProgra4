@@ -13,7 +13,7 @@ public class consultafactura extends conexion {
 		PreparedStatement ps = null;
 		Connection con = getConexion();
 
-		String sql = "Insert into factura(idfactura,nombrefatura,fecha,asiento,sala,hora,idusuario,idvendedor,idpelicula,subtotal,total,descuento";
+		String sql = "Insert into factura(idfactura,nombrefatura,fecha,asiento,sala,hora,idusuario,idvendedor,idpelicula,subtotal,total,descuento)(?,?,?,?,?,?,?,?,?,?,?,?)";
 		try {
 System.out.println("llego a consulta"	);
 System.out.println(" pasa por"+fac.getNpelicula() );
