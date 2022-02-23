@@ -18,7 +18,7 @@ public class ConsultaCartelera extends conexion{
 		PreparedStatement ps = null;
 		Connection con = getConexion();
 
-		String sql = "Insert into cartelera(Pelicula,Horario,TipoSala,Idioma)";
+		String sql = "Insert into cartelera(Pelicula,Horario,TipoSala,Idioma) VALUES (?,?,?,?)";
 		try {
 
 			ps = con.prepareStatement(sql);
@@ -47,7 +47,7 @@ public class ConsultaCartelera extends conexion{
         PreparedStatement ps = null;
         Connection con = getConexion();
         
-        String sql = "UPDATE vendedor SET Pelicula=?, Horario=?, TipoSala=?, Idioma=? WHERE Pelicula=?";
+        String sql = "UPDATE cartelera SET Pelicula=?, Horario=?, TipoSala=?, Idioma=? WHERE Pelicula=?";
         
         
         try{

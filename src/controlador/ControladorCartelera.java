@@ -33,9 +33,9 @@ public class ControladorCartelera implements ActionListener {
     public void limpiar() {
 		formcar.txtHorarios.setText("");
 		formcar.txtpelicula.setText("");
-/*		formcar.cmbIdioma.setText(""); 
-/*		formcar.cmbTipoSala.setText("");
-		*/ //investigar los combobox para limpiar y para almacenar 
+//		formcar.cmbIdioma.removeAllItems(); 
+//		formcar.cmbTipoSala.removeAllItems();
+		 
 
 	}
     
@@ -45,8 +45,8 @@ public class ControladorCartelera implements ActionListener {
 		if (e.getSource() == formcar.btnagregar) {
                     car.setPelicula(formcar.txtpelicula.getText());
 			car.setHorario(formcar.txtHorarios.getText());
-			//*car.setTipoSala(formcar.cmbTipoSala.getText());
-                        //car.setIdioma(formcar.cmbIdioma);
+			car.setTipoSala(formcar.cmbTipoSala.getSelectedItem().toString());
+                        car.setIdioma(formcar.cmbIdioma.getSelectedItem().toString());
                         
                           
 		if (consultacar.Agregar(car)) {
@@ -59,8 +59,8 @@ public class ControladorCartelera implements ActionListener {
                 if (e.getSource() == formcar.btneditar) {
                     car.setPelicula(formcar.txtpelicula.getText());
 			car.setHorario(formcar.txtHorarios.getText());
-			//*car.setTipoSala(formcar.cmbTipoSala.getText());
-                        //car.setIdioma(formcar.cmbIdioma);
+			car.setTipoSala(formcar.cmbTipoSala.getSelectedItem().toString());
+                        car.setIdioma(formcar.cmbIdioma.getSelectedItem().toString());
                         
                           
 		if (consultacar.editar(car)) {
@@ -73,11 +73,7 @@ public class ControladorCartelera implements ActionListener {
 	}
                 if (e.getSource() == formcar.btneliminar) {
                     car.setPelicula(formcar.txtpelicula.getText());
-			car.setHorario(formcar.txtHorarios.getText());
-			//*car.setTipoSala(formcar.cmbTipoSala.getText());
-                        //car.setIdioma(formcar.cmbIdioma);
-                        
-                          
+			        
 		if (consultacar.eliminar(car)) {
 				JOptionPane.showMessageDialog(null, "Se ha eliminado la pelicula");
 				limpiar();
@@ -85,11 +81,23 @@ public class ControladorCartelera implements ActionListener {
 				JOptionPane.showMessageDialog(null, "error ");
 			}
       
-        
-        
-
-}
+   }
+                if (e.getSource() == formcar.btnbuscar) {
+                    car.setPelicula(formcar.txtpelicula.getText());
+                        
+                    if (consultacar.buscar(car)) {
+                      formcar.txtpelicula.setText(car.getPelicula());
+                      formcar.txtHorarios.setText(car.getHorario());
+                      formcar.cmbTipoSala.setSelectedItem(car.getTipoSala());
+                      formcar.cmbIdioma.setSelectedItem(car.getIdioma());
+                   
+				
+			} else {
+				JOptionPane.showMessageDialog(null, "error ");
+			}
                 
+                
+}
 }
 }
     
